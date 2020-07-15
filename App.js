@@ -18,23 +18,9 @@ import {
     Alert,
     Image
 } from 'react-native';
-import WidgetDemoPage from "./WidgetDemoPage"
+import WidgetDemoPage from "./ui/WidgetDemoPage/WidgetDemoPage";
+import HomePage from "./ui/HomePage/HomePage"
 
-function HomeScreen(){
-    return (
-        <>
-            <View style={homePageStyle.btnContainer}>
-                <Button
-                    onPress={ ()=> {
-                        navigation.navigate("WidgetDemoPage");
-                    }}
-                    title={"Widget Demo"}
-                    style={homePageStyle.btn}/>
-            </View>
-
-        </>
-    );
-}
 
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
@@ -45,20 +31,12 @@ const App: () => React$Node = () =>{
   return(
       <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen  name={"Home"} component={HomeScreen} />
+            <Stack.Screen  name={"Home"} component={HomePage} />
             <Stack.Screen  name={"WidgetDemoPage"} component={WidgetDemoPage} />
         </Stack.Navigator>
       </NavigationContainer>
   );
 }
-const homePageStyle = StyleSheet.create({
-    btn:{
-    },
-    btnContainer:{
-        marginTop:8,
-        paddingHorizontal:8,
-        marginHorizontal:8
-    }
-})
+
 
 export default App;

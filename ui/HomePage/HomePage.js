@@ -1,8 +1,7 @@
-import React from "react"
-import App from "./App";
-import {Button, View} from "react-native";
+import {Button, StyleSheet, View} from "react-native";
+import React from "react";
 
-function WidgetDemoPage(){
+function HomePage({ navigation }){
     return (
         <>
             <View style={homePageStyle.btnContainer}>
@@ -17,4 +16,13 @@ function WidgetDemoPage(){
         </>
     );
 }
-    export default WidgetDemoPage;
+const homePageStyle = StyleSheet.create({
+    btn:{
+    },
+    btnContainer:{
+        marginTop:8,
+        paddingHorizontal:8,
+        marginHorizontal:8
+    }
+});
+export default HomePage;
